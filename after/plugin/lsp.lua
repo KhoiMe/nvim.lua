@@ -73,6 +73,11 @@ require('lspconfig').html.setup({
   filetypes = { "html", "php" },
 })
 
+require('lspconfig').phpactor.setup({
+  single_file_support = false,
+  filetypes = { "html", "php" },
+})
+
 require('lspconfig').emmet_ls.setup({
   single_file_support = false,
   filetypes = { "html", "php" },
