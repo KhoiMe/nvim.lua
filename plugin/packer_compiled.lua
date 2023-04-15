@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  everforest = {
-    loaded = true,
-    path = "/home/tejada/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -200,11 +195,6 @@ _G.packer_plugins = {
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
-  ["statusline.lua"] = {
-    loaded = true,
-    path = "/home/tejada/.local/share/nvim/site/pack/packer/start/statusline.lua",
-    url = "https://github.com/beauwilliams/statusline.lua"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -219,6 +209,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/home/tejada/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
   },
   ["vim-fugitive"] = {
     loaded = true,

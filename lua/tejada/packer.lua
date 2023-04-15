@@ -21,23 +21,12 @@ return require('packer').startup(function(use)
     })
 
     use({
-        'sainnhe/everforest',
-        as = 'everforest',
-        -- config = function()
-        --     vim.cmd('colorscheme everforest')
-        -- end
-    })
-
-    use({
         'rose-pine/neovim',
         as = 'rose-pine',
         config = function()
             vim.cmd('colorscheme rose-pine')
         end
     })
-    -- use ('beauwilliams/statusline.lua')
-
-    -- use('feline-nvim/feline.nvim')
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
@@ -47,6 +36,7 @@ return require('packer').startup(function(use)
 
     use('preservim/nerdtree')
     use('Xuyuanp/nerdtree-git-plugin')
+    use('ryanoasis/vim-devicons')
 
 
     -- weird utils
