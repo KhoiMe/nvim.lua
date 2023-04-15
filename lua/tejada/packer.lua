@@ -35,9 +35,6 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme rose-pine')
         end
     })
-    -- use ('beauwilliams/statusline.lua')
-
-    -- use('feline-nvim/feline.nvim')
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
@@ -47,6 +44,9 @@ return require('packer').startup(function(use)
 
     use('preservim/nerdtree')
     use('Xuyuanp/nerdtree-git-plugin')
+    use('ryanoasis/vim-devicons')
+    use('PhilRunninger/nerdtree-visual-selection')
+    -- use('tiagofumo/vim-nerdtree-syntax-highlight')
 
 
     -- weird utils

@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin",
     url = "https://github.com/Xuyuanp/nerdtree-git-plugin"
   },
+  ["nerdtree-visual-selection"] = {
+    loaded = true,
+    path = "/home/tejada/.local/share/nvim/site/pack/packer/start/nerdtree-visual-selection",
+    url = "https://github.com/PhilRunninger/nerdtree-visual-selection"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -200,11 +205,6 @@ _G.packer_plugins = {
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
-  ["statusline.lua"] = {
-    loaded = true,
-    path = "/home/tejada/.local/share/nvim/site/pack/packer/start/statusline.lua",
-    url = "https://github.com/beauwilliams/statusline.lua"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -220,10 +220,20 @@ _G.packer_plugins = {
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/home/tejada/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-nerdtree-syntax-highlight"] = {
+    loaded = true,
+    path = "/home/tejada/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight",
+    url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
   },
   ["vim-snippets"] = {
     loaded = true,
