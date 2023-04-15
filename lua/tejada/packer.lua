@@ -19,14 +19,22 @@ return require('packer').startup(function(use)
         "rebelot/kanagawa.nvim",
         as = 'kanagawa',
     })
+
     use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
+        'sainnhe/everforest',
+        as = 'everforest',
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            vim.cmd('colorscheme everforest')
         end
     })
 
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+        -- config = function()
+        --     vim.cmd('colorscheme rose-pine')
+        -- end
+    })
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
