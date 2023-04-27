@@ -46,7 +46,11 @@ return require('packer').startup(function(use)
     use('windwp/nvim-autopairs')
     use('windwp/nvim-ts-autotag')
 
-    use ('jose-elias-alvarez/null-ls.nvim')
+    use('jose-elias-alvarez/null-ls.nvim')
+
+    use('akinsho/nvim-bufferline.lua')
+    use('lewis6991/gitsigns.nvim')
+    use('dinhhuy258/git.nvim')
 
     use {
         'VonHeikemen/lsp-zero.nvim',
