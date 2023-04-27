@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
+    use('nvim-treesitter/nvim-treesitter-context')
     use('ThePrimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
@@ -45,6 +46,7 @@ return require('packer').startup(function(use)
     use('windwp/nvim-autopairs')
     use('windwp/nvim-ts-autotag')
 
+    use ('jose-elias-alvarez/null-ls.nvim')
 
     use {
         'VonHeikemen/lsp-zero.nvim',
