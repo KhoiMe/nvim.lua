@@ -27,11 +27,11 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- netrw things
-
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
+-- font highlight
 vim.cmd [[hi Comment gui=bold]]
 vim.cmd [[hi @lsp.type.property gui=bold]]
 vim.cmd [[hi Boolean gui=bold]]
