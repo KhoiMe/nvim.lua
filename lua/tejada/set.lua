@@ -34,6 +34,7 @@ vim.g.netrw_winsize = 25
 
 vim.cmd [[hi Comment gui=bold]]
 vim.cmd [[hi @lsp.type.property gui=bold]]
+vim.cmd [[hi Boolean gui=bold]]
 vim.cmd [[hi @lsp.type.keyword gui=bold]]
 vim.cmd [[hi @lsp.type.parameter gui=bold]]
 vim.cmd [[hi @lsp.type.variable gui=bold]]
