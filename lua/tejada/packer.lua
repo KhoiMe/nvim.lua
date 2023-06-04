@@ -7,6 +7,7 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    use 'folke/zen-mode.nvim'
 
 
     use {
@@ -29,7 +30,6 @@ return require('packer').startup(function(use)
     })
 
     -- document writing
-    --
     use({ 'lervag/vimtex' })
 
     use {
