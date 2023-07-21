@@ -59,6 +59,7 @@ return require('packer').startup(function(use)
     use('ThePrimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
+    use('lukas-reineke/indent-blankline.nvim')
 
     use('preservim/nerdtree')
     use('Xuyuanp/nerdtree-git-plugin')
