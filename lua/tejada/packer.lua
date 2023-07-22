@@ -22,11 +22,28 @@ return require('packer').startup(function(use)
     })
 
     use({
+        "olimorris/onedarkpro.nvim",
+        as = 'onedarkpro',
+    })
+
+    use({
+        "Shatur/neovim-ayu",
+        as = "ayu",
+    })
+
+    use({
+        "bluz71/vim-moonfly-colors",
+        as = "moonfly"
+    })
+
+
+
+    use({
         'rose-pine/neovim',
         as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
+        -- config = function()
+        --     vim.cmd('colorscheme rose-pine')
+        -- end
     })
 
     -- document writing

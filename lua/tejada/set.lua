@@ -31,13 +31,20 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
+-- monfly things
+vim.g.moonflyNormalFloat = true
+vim.g.moonflyItalics = true
+vim.g.moonflyTransparent = true
+
+
+
 -- font highlight
-vim.cmd [[hi Comment gui=bold]]
-vim.cmd [[hi @lsp.type.property gui=bold]]
-vim.cmd [[hi Boolean gui=bold]]
-vim.cmd [[hi @lsp.type.keyword gui=bold]]
-vim.cmd [[hi @lsp.type.parameter gui=bold]]
-vim.cmd [[hi @lsp.type.variable gui=bold]]
+
+-- vim.cmd [[hi @lsp.type.property gui=bold]]
+-- vim.cmd [[hi Boolean gui=bold]]
+-- vim.cmd [[hi @lsp.type.keyword gui=bold]]
+-- vim.cmd [[hi @lsp.type.parameter gui=bold]]
+-- vim.cmd [[hi @lsp.type.variable gui=bold]]
 
 vim.cmd [[let &t_ZH="\e[3m"]]
 vim.cmd [[let &t_ZR="\e[23m"]]
