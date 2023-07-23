@@ -35,3 +35,6 @@ require('telescope').setup {
         show_moon = true,
     }
 }
+
+require('telescope').load_extension('fzf')
+

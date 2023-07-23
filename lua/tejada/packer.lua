@@ -7,29 +7,35 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    use 'folke/zen-mode.nvim'
+    -- use 'folke/zen-mode.nvim'
 
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        'nvim-telescope/telescope.nvim', tag = '0.1.2',
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
     use({
-        "rebelot/kanagawa.nvim",
-        as = 'kanagawa',
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run =
+        'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
     })
 
-    use({
-        "olimorris/onedarkpro.nvim",
-        as = 'onedarkpro',
-    })
+    -- use({
+    --     "rebelot/kanagawa.nvim",
+    --     as = 'kanagawa',
+    -- })
 
-    use({
-        "Shatur/neovim-ayu",
-        as = "ayu",
-    })
+    -- use({
+    --     "olimorris/onedarkpro.nvim",
+    --     as = 'onedarkpro',
+    -- })
+
+    -- use({
+    --     "Shatur/neovim-ayu",
+    --     as = "ayu",
+    -- })
 
     use({
         "bluz71/vim-moonfly-colors",
@@ -49,26 +55,26 @@ return require('packer').startup(function(use)
     -- document writing
     use({ 'lervag/vimtex' })
 
-    use {
-        "nvim-neorg/neorg",
-        config = function()
-            require('neorg').setup {
-                load = {
-                    ["core.defaults"] = {},  -- Loads default behaviour
-                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
-                    ["core.dirman"] = {      -- Manages Neorg workspaces
-                        config = {
-                            workspaces = {
-                                notes = "~/notes",
-                            },
-                        },
-                    },
-                },
-            }
-        end,
-        run = ":Neorg sync-parsers",
-        requires = "nvim-lua/plenary.nvim",
-    }
+    -- use {
+    --     "nvim-neorg/neorg",
+    --     config = function()
+    --         require('neorg').setup {
+    --             load = {
+    --                 ["core.defaults"] = {},  -- Loads default behaviour
+    --                 ["core.concealer"] = {}, -- Adds pretty icons to your documents
+    --                 ["core.dirman"] = {      -- Manages Neorg workspaces
+    --                     config = {
+    --                         workspaces = {
+    --                             notes = "~/notes",
+    --                         },
+    --                     },
+    --                 },
+    --             },
+    --         }
+    --     end,
+    --     run = ":Neorg sync-parsers",
+    --     requires = "nvim-lua/plenary.nvim",
+    -- }
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
