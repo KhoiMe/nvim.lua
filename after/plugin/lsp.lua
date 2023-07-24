@@ -1,42 +1,44 @@
-local lsp = require("lsp-zero")
+local lsp = require('lsp-zero').preset({})
 
-lsp.preset("recommended")
+lsp.on_attach(function(client, bufnr)
+    lsp.default_keymaps({ buffer = bufnr })
+end)
 
-lsp.ensure_installed({
-    'tsserver',
-    'intelephense',
-    'rust_analyzer',
-    'html',
-    'emmet_ls',
-    'eslint',
-    'vimls',
+lsp.extend_cmp()
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    -- Replace the language servers listed here
+    -- with the ones you want to install
+    ensure_installed = { 'tsserver', 'rust_analyzer' },
+    handlers = {
+        lsp.default_setup,
+        lua_ls = function()
+            -- (Optional) Configure lua language server for neovim
+            require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+        end,
+    },
 })
 
-lsp.configure('lua_ls', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
-
+require('lsp-zero').extend_cmp()
 
 local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<S-TAB>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<TAB>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<C-Space>'] = cmp.mapping.complete(),
-})
+local cmp_action = require('lsp-zero').cmp_action()
 
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
+cmp.setup({
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+    mapping = {
+        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
 
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
+        ['<S-TAB>'] = cmp.mapping.select_prev_item(cmp_action),
+        ['<TAB>'] = cmp.mapping.select_next_item(cmp_action),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-Space>'] = cmp.mapping.complete(),
+    }
 })
 
 -- colorscheme things
