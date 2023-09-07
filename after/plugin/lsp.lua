@@ -5,7 +5,6 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.extend_cmp()
-require("luasnip.loaders.from_vscode").lazy_load()
 require('mason').setup({})
 require('mason-lspconfig').setup({
     -- Replace the language servers listed here
@@ -20,6 +19,7 @@ require('mason-lspconfig').setup({
     },
 })
 
+require("luasnip.loaders.from_vscode").lazy_load()
 require('lsp-zero').extend_cmp()
 
 local cmp = require('cmp')
@@ -27,11 +27,10 @@ local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
     sources = {
-        { name = 'path' }
-    },
-    window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+        { name = 'path' },
+        { name = 'buffer' },
     },
     mapping = {
         ['<C-f>'] = cmp_action.luasnip_jump_forward(),
