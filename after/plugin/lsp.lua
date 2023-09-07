@@ -5,7 +5,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.extend_cmp()
-
+require("luasnip.loaders.from_vscode").lazy_load()
 require('mason').setup({})
 require('mason-lspconfig').setup({
     -- Replace the language servers listed here
@@ -26,6 +26,9 @@ local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
+    sources = {
+        { name = 'path' }
+    },
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
@@ -38,7 +41,12 @@ cmp.setup({
         ['<TAB>'] = cmp.mapping.select_next_item(cmp_action),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
         ['<C-Space>'] = cmp.mapping.complete(),
-    }
+    },
+    snippet = {
+        expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+        end,
+    },
 })
 
 -- colorscheme things
@@ -68,14 +76,11 @@ vim.diagnostic.config({ float = { border = "single" } })
 
 --- end of colorscheme things
 
-lsp.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
+lsp.set_sign_icons({
+    error = '✘',
+    warn = '▲',
+    hint = '⚑',
+    info = '»'
 })
 
 
