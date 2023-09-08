@@ -39,6 +39,8 @@ vim.g.moonflyNormalFloat = true
 vim.g.moonflyItalics = true
 vim.g.moonflyTransparent = true
 
+vim.g.moonflyUnderlineMatchParen = true
+vim.g.moonflyUndercurls = false
 
 
 -- font highlight
