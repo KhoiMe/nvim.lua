@@ -25,7 +25,9 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 30
+vim.opt.pumheight = 10
+vim.opt.pumblend = 15
 
 -- netrw things
 vim.g.netrw_browse_split = 0
@@ -46,6 +48,5 @@ vim.g.moonflyTransparent = true
 -- vim.cmd [[hi @lsp.type.keyword gui=bold]]
 -- vim.cmd [[hi @lsp.type.parameter gui=bold]]
 -- vim.cmd [[hi @lsp.type.variable gui=bold]]
-
 vim.cmd [[let &t_ZH="\e[3m"]]
 vim.cmd [[let &t_ZR="\e[23m"]]

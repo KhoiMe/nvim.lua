@@ -60,6 +60,7 @@ return require('packer').startup(function(use)
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' }, -- Required
+            { 'onsails/lspkind.nvim' },
             {
                 -- Optional
                 'williamboman/mason.nvim',
@@ -73,6 +74,7 @@ return require('packer').startup(function(use)
             { 'hrsh7th/nvim-cmp' }, -- Required
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
+            { 'hrsh7th/cmp-nvim-lsp-signature-help' },
             { 'saadparwaiz1/cmp_luasnip' },
             { 'hrsh7th/cmp-nvim-lua' },
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required

@@ -25,12 +25,17 @@ require('lsp-zero').extend_cmp()
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
+local lspkind = require('lspkind')
+
+
 cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
         { name = 'buffer' },
+        { name = 'nvim_lsp_signature_help' },
+
     },
     mapping = {
         ['<C-f>'] = cmp_action.luasnip_jump_forward(),
@@ -45,6 +50,39 @@ cmp.setup({
         expand = function(args)
             require('luasnip').lsp_expand(args.body)
         end,
+    },
+    formatting = {
+        format = lspkind.cmp_format({
+            preset = 'codicons',
+            symbol_map = {
+                Text = "󰉿",
+                -- Method = "󰆧",
+                -- Function = "󰊕",
+                -- Constructor = "",
+                -- Field = "󰜢",
+                -- Variable = "󰀫",
+                -- Class = "󰠱",
+                -- Interface = "",
+                -- Module = "",
+                -- Property = "󰜢",
+                -- Unit = "󰑭",
+                -- Value = "󰎠",
+                -- Enum = "",
+                -- Keyword = "󰌋",
+                Snippet = "",
+                -- Color = "󰏘",
+                File = "󰈙",
+                -- Reference = "󰈇",
+                -- Folder = "󰉋",
+                -- EnumMember = "",
+                -- Constant = "󰏿",
+                -- Struct = "󰙅",
+                -- Event = "",
+                -- Operator = "󰆕",
+                -- TypeParameter = "",
+                Folder = "󰉋",
+            },
+        }),
     },
 })
 
