@@ -1,4 +1,5 @@
 vim.opt.nu = true
+vim.opt.cursorline = true
 vim.opt.relativenumber = true
 
 vim.opt.smartindent = true
@@ -35,20 +36,19 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 -- monfly things
-vim.g.moonflyNormalFloat = true
-vim.g.moonflyItalics = true
-vim.g.moonflyTransparent = true
+-- vim.g.moonflyNormalFloat = true
+-- vim.g.moonflyItalics = true
+-- vim.g.moonflyTransparent = true
 
-vim.g.moonflyUnderlineMatchParen = true
-vim.g.moonflyUndercurls = false
+-- vim.g.moonflyUnderlineMatchParen = true
+-- vim.g.moonflyUndercurls = false
 
-
--- font highlight
 
 -- vim.cmd [[hi @lsp.type.property gui=bold]]
 -- vim.cmd [[hi Boolean gui=bold]]
 -- vim.cmd [[hi @lsp.type.keyword gui=bold]]
 -- vim.cmd [[hi @lsp.type.parameter gui=bold]]
 -- vim.cmd [[hi @lsp.type.variable gui=bold]]
-vim.cmd [[let &t_ZH="\e[3m"]]
-vim.cmd [[let &t_ZR="\e[23m"]]
+--
+-- vim.cmd [[let &t_ZH="\e[3m"]]
+-- vim.cmd [[let &t_ZR="\e[23m"]]

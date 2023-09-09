@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
         "bluz71/vim-moonfly-colors",
         as = "moonfly"
     })
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
 
     -- document writing
     use({ 'lervag/vimtex' })
