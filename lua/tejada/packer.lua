@@ -54,6 +54,11 @@ return require('packer').startup(function(use)
     use('lewis6991/gitsigns.nvim')
     use('dinhhuy258/git.nvim')
 
+    -- database UI
+    use ('tpope/vim-dadbod')
+    use ('kristijanhusak/vim-dadbod-ui')
+    use ('kristijanhusak/vim-dadbod-completion')
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'dev-v3',
