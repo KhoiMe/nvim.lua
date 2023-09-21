@@ -77,7 +77,7 @@ cmp.setup({
                 -- EnumMember = "",
                 -- Constant = "󰏿",
                 -- Struct = "󰙅",
-                -- Event = "",
+                Event = "",
                 -- Operator = "󰆕",
                 -- TypeParameter = "",
                 Folder = "󰉋",
