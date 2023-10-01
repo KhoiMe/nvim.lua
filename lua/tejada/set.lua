@@ -28,7 +28,6 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 30
 vim.opt.pumheight = 10
-vim.opt.pumblend = 15
 
 -- netrw things
 vim.g.netrw_browse_split = 0
