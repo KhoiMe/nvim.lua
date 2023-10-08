@@ -17,8 +17,13 @@ vim.keymap.set("n", "<TAB>", ":bnext<CR>")
 vim.keymap.set("n", "<S-TAB>", ":bprev<CR>")
 
 -- between tabs
-vim.keymap.set("n", "<leader>tt", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>tt", ":tabe .<CR>")
 vim.keymap.set("n", "nt", ":tabnext<CR>")
+vim.keymap.set("n", "1", ":tabnext 1<CR>")
+vim.keymap.set("n", "2", ":tabnext 2<CR>")
+vim.keymap.set("n", "3", ":tabnext 3<CR>")
+vim.keymap.set("n", "4", ":tabnext 4<CR>")
+vim.keymap.set("n", "5", ":tabnext 5<CR>")
 vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
