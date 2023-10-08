@@ -55,9 +55,14 @@ return require('packer').startup(function(use)
     use('dinhhuy258/git.nvim')
 
     -- database UI
-    use ('tpope/vim-dadbod')
-    use ('kristijanhusak/vim-dadbod-ui')
-    use ('kristijanhusak/vim-dadbod-completion')
+    use('tpope/vim-dadbod')
+    use('kristijanhusak/vim-dadbod-ui')
+    use('kristijanhusak/vim-dadbod-completion')
+
+    use({
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig"
+    })
 
     use {
         'VonHeikemen/lsp-zero.nvim',

@@ -1,7 +1,10 @@
 local lsp = require('lsp-zero').preset({})
+local vim = vim
+local navic = require("nvim-navic")
 
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
+    navic.attach({ buffer = bufnr })
 end)
 
 lsp.extend_cmp()
@@ -27,6 +30,9 @@ local cmp_action = require('lsp-zero').cmp_action()
 
 local lspkind = require('lspkind')
 
+local winhighlight = {
+    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+}
 
 cmp.setup({
     sources = {
@@ -56,6 +62,10 @@ cmp.setup({
             preset = 'codicons',
             symbol_map = {
                 Text = "󰉿",
+                Snippet = "",
+                File = "󰈙",
+                Event = "",
+                Folder = "󰉋",
                 -- Method = "󰆧",
                 -- Function = "󰊕",
                 -- Constructor = "",
@@ -69,30 +79,17 @@ cmp.setup({
                 -- Value = "󰎠",
                 -- Enum = "",
                 -- Keyword = "󰌋",
-                Snippet = "",
                 -- Color = "󰏘",
-                File = "󰈙",
                 -- Reference = "󰈇",
                 -- Folder = "󰉋",
                 -- EnumMember = "",
                 -- Constant = "󰏿",
                 -- Struct = "󰙅",
-                Event = "",
                 -- Operator = "󰆕",
                 -- TypeParameter = "",
-                Folder = "󰉋",
             },
         }),
     },
-})
-
--- colorscheme things
-
-local winhighlight = {
-    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
-}
-
-require('cmp').setup({
     window = {
         completion = cmp.config.window.bordered(winhighlight),
         documentation = cmp.config.window.bordered(winhighlight),
@@ -110,7 +107,6 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
     }
 )
 vim.diagnostic.config({ float = { border = "single" } })
-
 --- end of colorscheme things
 
 lsp.set_sign_icons({
@@ -135,14 +131,32 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-require('lspconfig').html.setup({
+-- nvim navic
+local function setup_language_servers(server_names_nav)
+    for _, server_nav in ipairs(server_names_nav) do
+        require('lspconfig')[server_nav].setup({
+            on_attach = function(client, bufnr)
+                navic.attach(client, bufnr)
+            end,
+        })
+    end
+end
+
+local servers_to_setup = { 'pylsp', 'rust_analyzer', 'cssls', 'tsserver', 'lua_ls', 'html' }
+setup_language_servers(servers_to_setup)
+
+-- Php needed
+require('lspconfig').emmet_ls.setup({
     single_file_support = false,
     filetypes = { "html", "php" },
 })
 
-require('lspconfig').emmet_ls.setup({
+require('lspconfig').html.setup({
     single_file_support = false,
     filetypes = { "html", "php" },
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end,
 })
 
 lsp.setup()

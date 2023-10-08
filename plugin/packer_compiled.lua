@@ -194,6 +194,11 @@ _G.packer_plugins = {
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "/home/tejada/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/tejada/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
