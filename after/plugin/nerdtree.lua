@@ -1,5 +1,4 @@
 vim.cmd [[
-
     let NERDTreeQuitOnOpen=1
     let NERDTreeAutoDeleteBuffer=1
     let NERDTreeMinimalUI=1
