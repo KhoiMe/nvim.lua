@@ -4,10 +4,10 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use {
+    use({
         'nvim-telescope/telescope.nvim',
         requires = { { 'nvim-lua/plenary.nvim' } }
-    }
+    })
 
     use({
         'nvim-telescope/telescope-fzf-native.nvim',
@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
         "bluz71/vim-moonfly-colors",
         as = "moonfly"
     })
+
     use({ 'rose-pine/neovim', as = 'rose-pine' })
 
     -- document writing
@@ -64,7 +65,7 @@ return require('packer').startup(function(use)
         requires = "neovim/nvim-lspconfig"
     })
 
-    use {
+    use ({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'dev-v3',
         requires = {
@@ -96,5 +97,5 @@ return require('packer').startup(function(use)
             { 'honza/vim-snippets' },
 
         }
-    }
+    })
 end)
