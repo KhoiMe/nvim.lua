@@ -37,6 +37,7 @@ local winhighlight = {
 cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
+        { name = 'cmdline' },
         { name = 'luasnip' },
         { name = 'path' },
         { name = 'buffer' },

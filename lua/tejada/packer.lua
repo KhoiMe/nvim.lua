@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
     -- use('lukas-reineke/indent-blankline.nvim')
 
     use('preservim/nerdtree')
+    use('akinsho/toggleterm.nvim')
     use('Xuyuanp/nerdtree-git-plugin')
     use('ryanoasis/vim-devicons')
 
@@ -65,7 +66,7 @@ return require('packer').startup(function(use)
         requires = "neovim/nvim-lspconfig"
     })
 
-    use ({
+    use({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'dev-v3',
         requires = {
@@ -89,6 +90,7 @@ return require('packer').startup(function(use)
             { 'saadparwaiz1/cmp_luasnip' },
             { 'hrsh7th/cmp-nvim-lua' },
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+            { 'hrsh7th/cmp-cmdline' },
 
 
             -- snippets
