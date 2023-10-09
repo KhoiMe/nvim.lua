@@ -36,6 +36,7 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 vim.cmd [[let g:dbext_default_mysql_cmd = 'mariadb']]
+vim.cmd [[set guicursor=n-v-c-i:block]]
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 
