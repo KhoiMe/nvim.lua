@@ -1,6 +1,6 @@
 local vim = vim
 vim.opt.nu = true
--- vim.opt.cursorline = true
+-- vi.opt.cursorline = true
 vim.opt.relativenumber = true
 
 vim.opt.smartindent = true
@@ -27,7 +27,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 30
+vim.opt.updatetime = 10
 vim.opt.pumheight = 10
 
 -- netrw things
@@ -38,8 +38,6 @@ vim.g.netrw_winsize = 25
 vim.cmd [[let g:dbext_default_mysql_cmd = 'mariadb']]
 vim.cmd [[set guicursor=n-v-c-i:block]]
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-
-
 
 -- monfly things
 -- vim.g.moonflyNormalFloat = true
