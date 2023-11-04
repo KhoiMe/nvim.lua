@@ -162,7 +162,8 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<SPACE>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("n", "<C-m>", '<cmd>Telescope lsp_references<cr>', { buffer = bufnr })
 
-    lsp.buffer_autoformat()
+    -- can't autoformat  because php inline
+    -- lsp.buffer_autoformat()
 end)
 
 -- nvim navic
@@ -175,19 +176,6 @@ local function setup_language_servers(server_names_nav)
         })
     end
 end
-lsp.format_on_save({
-    format_opts = {
-        async = false,
-        timeout_ms = 10000,
-    },
-    servers = {
-        ['tsserver'] = { 'javascript', 'typescript' },
-        ['lua_ls'] = { 'lua' },
-        ['html'] = { 'html' },
-        ['intelephense'] = { 'php' },
-        ['rust_analyzer'] = { 'rust' },
-    }
-})
 
 local servers_to_setup = { 'pylsp', 'rust_analyzer', 'cssls', 'tsserver', 'lua_ls', 'html' }
 setup_language_servers(servers_to_setup)
