@@ -22,8 +22,8 @@ require 'nvim-treesitter.configs'.setup {
     autotag = {
         enable = true,
         enable_rename = true,
-    }
-    -- indent = {
-    --     enable = true,
-    -- },
+    },
+    indent = {
+        enable = true,
+    },
 }
