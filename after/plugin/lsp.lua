@@ -183,7 +183,7 @@ lsp.format_on_save({
     servers = {
         ['tsserver'] = { 'javascript', 'typescript' },
         ['lua_ls'] = { 'lua' },
-        ['html'] = { 'html', 'php' },
+        ['html'] = { 'html' },
         ['intelephense'] = { 'php' },
         ['rust_analyzer'] = { 'rust' },
     }
