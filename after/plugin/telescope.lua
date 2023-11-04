@@ -2,6 +2,7 @@ local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', 'to', builtin.oldfiles, {})
 vim.keymap.set('n', 'tf', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 vim.keymap.set('n', 'tb', builtin.buffers, {})
 
 vim.keymap.set('n', 'tw', function()
@@ -13,13 +14,13 @@ require('telescope').setup {
     },
     pickers = {
         find_files = {
-            theme = "ivy",
+            -- theme = "ivy",
         },
         oldfiles = {
-            theme = "ivy",
+            -- theme = "ivy",
         },
         buffers = {
-            theme = "ivy",
+            -- theme = "ivy",
         },
     },
     extensions = {

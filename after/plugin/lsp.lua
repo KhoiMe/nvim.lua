@@ -1,4 +1,4 @@
-local lsp = require('lsp-zero').preset({})
+local lsp = require('lsp-zero')
 local vim = vim
 local navic = require("nvim-navic")
 
@@ -27,16 +27,52 @@ require('lsp-zero').extend_cmp()
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
-
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local lspkind = require('lspkind')
+local winhighlight = { winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel", }
 
-local winhighlight = {
-    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
-}
+local handlers = require('nvim-autopairs.completion.handlers')
+
+cmp.event:on(
+    'confirm_done',
+    cmp_autopairs.on_confirm_done({
+        filetypes = {
+            -- "*" is a alias to all filetypes
+            ["*"] = {
+                ["("] = {
+                    kind = {
+                        cmp.lsp.CompletionItemKind.Function,
+                        cmp.lsp.CompletionItemKind.Method,
+                    },
+                    handler = handlers["*"]
+                }
+            },
+            lua = {
+                ["("] = {
+                    kind = {
+                        cmp.lsp.CompletionItemKind.Function,
+                        cmp.lsp.CompletionItemKind.Method
+                    },
+                    ---@param char string
+                    ---@param item table item completion
+                    ---@param bufnr number buffer number
+                    ---@param rules table
+                    ---@param commit_character table<string>
+                    handler = function(char, item, bufnr, rules, commit_character)
+                        -- Your handler function. Inpect with print(vim.inspect{char, item, bufnr, rules, commit_character})
+                    end
+                }
+            },
+            -- Disable for tex
+            tex = false
+        }
+    })
+)
 
 cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
+        { name = 'treesitter' },
         { name = 'cmdline' },
         { name = 'luasnip' },
         { name = 'path' },
@@ -47,7 +83,6 @@ cmp.setup({
     mapping = {
         ['<C-f>'] = cmp_action.luasnip_jump_forward(),
         ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-
         ['<S-TAB>'] = cmp.mapping.select_prev_item(cmp_action),
         ['<TAB>'] = cmp.mapping.select_next_item(cmp_action),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
@@ -59,40 +94,22 @@ cmp.setup({
         end,
     },
     formatting = {
-        format = lspkind.cmp_format({
-            preset = 'codicons',
-            symbol_map = {
-                Text = "󰉿",
-                Snippet = "",
-                File = "󰈙",
-                Event = "",
-                Folder = "󰉋",
-                -- Method = "󰆧",
-                -- Function = "󰊕",
-                -- Constructor = "",
-                -- Field = "󰜢",
-                -- Variable = "󰀫",
-                -- Class = "󰠱",
-                -- Interface = "",
-                -- Module = "",
-                -- Property = "󰜢",
-                -- Unit = "󰑭",
-                -- Value = "󰎠",
-                -- Enum = "",
-                -- Keyword = "󰌋",
-                -- Color = "󰏘",
-                -- Reference = "󰈇",
-                -- Folder = "󰉋",
-                -- EnumMember = "",
-                -- Constant = "󰏿",
-                -- Struct = "󰙅",
-                -- Operator = "󰆕",
-                -- TypeParameter = "",
-            },
-        }),
+        fields = { 'abbr', 'menu', 'kind' },
+        format =
+            function(entry, item)
+                local menu_icon = {
+                    nvim_lsp = '[LSP]',
+                    luasnip = '[luasnip]',
+                    buffer = '[buffer]',
+                    path = '[path]',
+                    nvim_lua = '[nvim_lua]',
+                }
+                item.menu = menu_icon[entry.source.name]
+                return item
+            end,
     },
     window = {
-        completion = cmp.config.window.bordered(winhighlight),
+        -- completion = cmp.config.window.bordered(winhighlight),
         documentation = cmp.config.window.bordered(winhighlight),
     }
 })
@@ -143,7 +160,9 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<SPACE>vca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<SPACE>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<SPACE>vrn", function() vim.lsp.buf.rename() end, opts)
-    vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("n", "<C-h>", '<cmd>Telescope lsp_references<cr>', { buffer = bufnr })
+
+    lsp.buffer_autoformat()
 end)
 
 -- nvim navic
@@ -156,6 +175,19 @@ local function setup_language_servers(server_names_nav)
         })
     end
 end
+lsp.format_on_save({
+    format_opts = {
+        async = false,
+        timeout_ms = 10000,
+    },
+    servers = {
+        ['tsserver'] = { 'javascript', 'typescript' },
+        ['lua_ls'] = { 'lua' },
+        ['html'] = { 'html', 'php' },
+        ['intelephense'] = { 'php' },
+        ['rust_analyzer'] = { 'rust' },
+    }
+})
 
 local servers_to_setup = { 'pylsp', 'rust_analyzer', 'cssls', 'tsserver', 'lua_ls', 'html' }
 setup_language_servers(servers_to_setup)

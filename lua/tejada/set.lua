@@ -1,6 +1,8 @@
 local vim = vim
+
+vim.opt.guicursor = ""
+
 vim.opt.nu = true
--- vi.opt.cursorline = true
 vim.opt.relativenumber = true
 
 vim.opt.smartindent = true
@@ -36,23 +38,5 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 vim.cmd [[let g:dbext_default_mysql_cmd = 'mariadb']]
-vim.cmd [[set guicursor=n-v-c-i:block]]
+vim.cmd [[hi Pmenu guibg=#212121]]
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-
--- monfly things
--- vim.g.moonflyNormalFloat = true
--- vim.g.moonflyItalics = true
--- vim.g.moonflyTransparent = true
-
--- vim.g.moonflyUnderlineMatchParen = true
--- vim.g.moonflyUndercurls = false
-
-
--- vim.cmd [[hi @lsp.type.property gui=bold]]
--- vim.cmd [[hi Boolean gui=bold]]
--- vim.cmd [[hi @lsp.type.keyword gui=bold]]
--- vim.cmd [[hi @lsp.type.parameter gui=bold]]
--- vim.cmd [[hi @lsp.type.variable gui=bold]]
---
--- vim.cmd [[let &t_ZH="\e[3m"]]
--- vim.cmd [[let &t_ZR="\e[23m"]]
