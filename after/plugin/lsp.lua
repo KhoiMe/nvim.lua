@@ -160,7 +160,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<SPACE>vca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<SPACE>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<SPACE>vrn", function() vim.lsp.buf.rename() end, opts)
-    vim.keymap.set("n", "<C-h>", '<cmd>Telescope lsp_references<cr>', { buffer = bufnr })
+    vim.keymap.set("n", "<C-m>", '<cmd>Telescope lsp_references<cr>', { buffer = bufnr })
 
     lsp.buffer_autoformat()
 end)

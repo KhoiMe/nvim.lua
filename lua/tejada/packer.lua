@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
             ts_update()
         end,
     }
+    use('ThePrimeagen/vim-be-good')
 
     use('nvim-treesitter/playground')
     use('nvim-treesitter/nvim-treesitter-context')
