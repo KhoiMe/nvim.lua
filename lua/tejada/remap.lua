@@ -13,8 +13,8 @@ vim.keymap.set("n", "ss", ":split<CR>")
 vim.keymap.set("n", "sv", ":vsplit<CR>")
 
 -- between buffers
-vim.keymap.set("n", "<TAB>", ":bnext<CR>")
-vim.keymap.set("n", "<S-TAB>", ":bprev<CR>")
+vim.keymap.set("n", "<TAB>", "<C-^>")
+vim.keymap.set("n", "<S-TAB>", ":bnext<CR>")
 
 -- between tabs
 vim.keymap.set("n", "tt", ":tabe .<CR>")
