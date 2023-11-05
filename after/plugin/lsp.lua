@@ -34,7 +34,7 @@ cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
         { name = 'treesitter' },
-        { name = 'cmdline' },
+        -- { name = 'cmdline' },
         { name = 'luasnip' },
         { name = 'path' },
         { name = 'buffer' },
@@ -75,19 +75,19 @@ cmp.setup({
     }
 })
 
-cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-        { name = 'path' }
-    }, {
-        {
-            name = 'cmdline',
-            option = {
-                ignore_cmds = { 'Man', '!' }
-            }
-        }
-    })
-})
+-- cmp.setup.cmdline(':', {
+--     mapping = cmp.mapping.preset.cmdline(),
+--     sources = cmp.config.sources({
+--         { name = 'path' }
+--     }, {
+--         {
+--             name = 'cmdline',
+--             option = {
+--                 ignore_cmds = { 'Man', '!' }
+--             }
+--         }
+--     })
+-- })
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
     vim.lsp.handlers.hover, {
