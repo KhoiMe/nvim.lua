@@ -1,6 +1,8 @@
 local vim = vim
 
 vim.opt.guicursor = ""
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -8,12 +10,16 @@ vim.opt.relativenumber = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
+vim.opt.cmdheight = 1
+vim.opt.showmode = false
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.wrap = false
+vim.opt.smartcase = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -29,7 +35,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 10
+vim.opt.updatetime = 1000
 vim.opt.pumheight = 10
 
 -- netrw things
