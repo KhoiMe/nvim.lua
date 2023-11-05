@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
     -- weird utils
     use('norcalli/nvim-colorizer.lua')
     use('tpope/vim-commentary')
-    use('windwp/nvim-autopairs')
+    -- use('windwp/nvim-autopairs')
     use('windwp/nvim-ts-autotag')
 
     use('nvim-tree/nvim-web-devicons')
