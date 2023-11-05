@@ -11,16 +11,20 @@ end)
 
 require('telescope').setup {
     defaults = {
+        preview = false,
     },
     pickers = {
         find_files = {
-            -- theme = "ivy",
+            theme = "dropdown",
         },
         oldfiles = {
-            -- theme = "ivy",
+            theme = "dropdown",
+        },
+        git_files = {
+            theme = "dropdown",
         },
         buffers = {
-            -- theme = "ivy",
+            theme = "dropdown",
         },
     },
     extensions = {
@@ -34,7 +38,11 @@ require('telescope').setup {
     planets = {
         show_pluto = true,
         show_moon = true,
-    }
+    },
+    layout = {
+
+
+    },
 }
 
 require('telescope').load_extension('fzf')
