@@ -17,6 +17,9 @@ return require('packer').startup(function(use)
     })
 
     use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use({ 'tjdevries/colorbuddy.vim' })
+    use({ 'tjdevries/gruvbuddy.nvim' })
+
 
     use {
         'nvim-treesitter/nvim-treesitter',
