@@ -54,6 +54,9 @@ function ColorMyPencils(color)
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
     -- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+    vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#6e6a86"})
+    vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#6e6a86"})
+    vim.api.nvim_set_hl(0, "LineNr", { fg = "#e0def4"})
     vim.api.nvim_set_hl(0, "Pmenu", { bg = "#212121" })
 end
 
