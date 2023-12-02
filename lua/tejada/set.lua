@@ -35,7 +35,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 1000
+vim.opt.updatetime = 750
 vim.opt.pumheight = 10
 
 -- netrw things

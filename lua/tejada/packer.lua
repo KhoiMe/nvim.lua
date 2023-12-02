@@ -28,18 +28,14 @@ return require('packer').startup(function(use)
             ts_update()
         end,
     }
-    use('ThePrimeagen/vim-be-good')
 
-    use('nvim-treesitter/playground')
     use('nvim-treesitter/nvim-treesitter-context')
     use('ThePrimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     -- use('lukas-reineke/indent-blankline.nvim')
 
-    use('preservim/nerdtree')
     use('akinsho/toggleterm.nvim')
-    use('Xuyuanp/nerdtree-git-plugin')
     use('ryanoasis/vim-devicons')
 
 
