@@ -49,6 +49,10 @@ require("lazy").setup({
     { 'akinsho/toggleterm.nvim' },
     { 'ryanoasis/vim-devicons' },
 
+    -- big file thing
+    {
+        'LunarVim/bigfile.nvim'
+    },
 
     -- weird utils
     { 'norcalli/nvim-colorizer.lua' },
@@ -75,7 +79,7 @@ require("lazy").setup({
         -- Optional
         'williamboman/mason.nvim',
     },
-        { 'williamboman/mason-lspconfig.nvim' },     -- Optional
+        { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
         -- Autocompletion
         { 'ray-x/cmp-treesitter' },
@@ -84,7 +88,7 @@ require("lazy").setup({
         { 'hrsh7th/cmp-nvim-lsp-signature-help' },
         { 'saadparwaiz1/cmp_luasnip' },
         { 'hrsh7th/cmp-nvim-lua' },
-        { 'hrsh7th/cmp-nvim-lsp' },     -- Required
+        { 'hrsh7th/cmp-nvim-lsp' }, -- Required
         -- { 'hrsh7th/cmp-cmdline' },
 
 
