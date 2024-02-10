@@ -53,6 +53,7 @@ require("lazy").setup({
     {
         'LunarVim/bigfile.nvim'
     },
+    { 'shortcuts/no-neck-pain.nvim' },
 
     -- weird utils
     { 'norcalli/nvim-colorizer.lua' },
