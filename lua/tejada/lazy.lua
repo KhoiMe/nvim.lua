@@ -53,11 +53,30 @@ require("lazy").setup({
     {
         'LunarVim/bigfile.nvim'
     },
+
+    -- latex stuff
+    {
+        "lervag/vimtex",
+        dependencies = {
+            "micangl/cmp-vimtex",
+        },
+        version = "*",
+    },
+
+
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
+    },
+
     { 'shortcuts/no-neck-pain.nvim' },
 
     -- weird utils
     { 'norcalli/nvim-colorizer.lua' },
     { 'tpope/vim-commentary' },
+
     -- {'windwp/nvim-autopairs'},
     { 'windwp/nvim-ts-autotag' },
 

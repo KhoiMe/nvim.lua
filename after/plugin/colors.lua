@@ -1,19 +1,22 @@
 require('colorbuddy').colorscheme('gruvbuddy')
+local vim = vim
+local NONE = NONE
 
 function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
     vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
-    vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#21202e"})
-    vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#21202e"})
-    vim.api.nvim_set_hl(0, "LineNr", { fg = "#e0def4"})
-    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e0def4"})
+    vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#21202e" })
+    vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#21202e" })
+    vim.api.nvim_set_hl(0, "LineNr", { fg = "#FFFF00" })
+    -- vim.api.nvim_set_hl(0, "LineNr", { fg = "#e0def4" })
     vim.api.nvim_set_hl(0, "Pmenu", { bg = "#212121" })
+    vim.api.nvim_set_hl(0, "SignColumn", { bg = NONE })
+    vim.cmd("highlight LineNr gui=italic")
 end
 
-
 if not pcall(require, "colorbuddy") then
-  return
+    return
 end
 
 vim.opt.termguicolors = true
@@ -108,10 +111,10 @@ local colors = require("colorbuddy.color").colors
 local ns_tj = vim.api.nvim_create_namespace "tj_colors"
 
 vim.api.nvim_set_hl(ns_tj, "LuaFunctionCall", {
-  foreground = colors.green:to_rgb(),
-  background = nil,
-  reverse = false,
-  underline = false,
+    foreground = colors.green:to_rgb(),
+    background = nil,
+    reverse = false,
+    underline = false,
 })
 
 vim.api.nvim_set_hl_ns(ns_tj)
