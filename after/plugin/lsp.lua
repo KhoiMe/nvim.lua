@@ -155,6 +155,14 @@ require('lspconfig').html.setup({
     end,
 })
 
+require('lspconfig').jdtls.setup({
+    single_file_support = false,
+    filetypes = { "java"},
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end,
+})
+
 lsp.setup()
 
 vim.diagnostic.config({

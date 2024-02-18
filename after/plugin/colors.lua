@@ -13,6 +13,8 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "Pmenu", { bg = "#212121" })
     vim.api.nvim_set_hl(0, "SignColumn", { bg = NONE })
     vim.cmd("highlight LineNr gui=italic")
+    vim.cmd("highlight WinBar guibg=NONE")
+    vim.cmd("highlight WinBarNC guibg=NONE")
 end
 
 if not pcall(require, "colorbuddy") then
