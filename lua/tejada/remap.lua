@@ -3,6 +3,9 @@ vim.g.mapleader = "."
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>e", ":NERDTreeToggle<CR>")
 
+-- git stuff
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+
 -- Window behavior
 vim.keymap.set("n", "sh", "<C-w>h")
 vim.keymap.set("n", "se", "<C-w>l")
@@ -16,14 +19,6 @@ vim.keymap.set("n", "sv", ":vsplit<CR>")
 vim.keymap.set("n", "<TAB>", "<C-^>")
 vim.keymap.set("n", "<S-TAB>", ":bnext<CR>")
 
--- between tabs
--- vim.keymap.set("n", "tt", ":tabe .<CR>")
--- vim.keymap.set("n", "nt", ":tabnext<CR>")
--- vim.keymap.set("n", "1", ":tabnext 1<CR>")
--- vim.keymap.set("n", "2", ":tabnext 2<CR>")
--- vim.keymap.set("n", "3", ":tabnext 3<CR>")
--- vim.keymap.set("n", "4", ":tabnext 4<CR>")
--- vim.keymap.set("n", "5", ":tabnext 5<CR>")
 vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -46,6 +41,9 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
+
+--- nah, why I didn't notice:
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/myScripts/tmux-sessions<CR>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
