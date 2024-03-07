@@ -28,6 +28,9 @@ require("lazy").setup({
     { 'tjdevries/colorbuddy.vim' },
     { 'tjdevries/gruvbuddy.nvim' },
 
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+
+
 
     {
         'nvim-treesitter/nvim-treesitter',
