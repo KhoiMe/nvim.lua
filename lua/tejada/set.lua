@@ -21,6 +21,7 @@ vim.opt.expandtab = true
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.smartcase = true
+vim.opt.spell = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
