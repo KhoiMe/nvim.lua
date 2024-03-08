@@ -87,13 +87,13 @@ Group.new("@punctuation.bracket.rapper", c.gray3, nil, s.none)
 Group.new("@rapper_argument", c.red, nil, s.italic)
 Group.new("@rapper_return", c.orange:light(), nil, s.italic)
 Group.new("@constructor.ocaml", c.orange:light(), nil, s.none)
-Group.new("constant", c.orange, nil, s.none)
+Group.new("constant", c.orange, nil, s.bold)
 
 Group.new("@keyword", c.violet, nil, s.none)
 Group.new("@keyword.faded", g.nontext.fg:light(), nil, s.none)
 -- Group.new("@keyword.faded", c.green)
 
-Group.new("Function", c.yellow, nil, s.none)
+Group.new("Function", c.yellow, nil, s.bold)
 
 vim.cmd [[
   hi link @function.call.lua LuaFunctionCall
