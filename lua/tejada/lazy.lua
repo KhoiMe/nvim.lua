@@ -24,7 +24,8 @@ require("lazy").setup({
         'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
     },
 
-    { 'rose-pine/neovim',                    name = 'rose-pine' },
+    { 'rose-pine/neovim',        name = 'rose-pine' },
+    { 'rebelot/kanagawa.nvim' },
     { 'tjdevries/colorbuddy.vim' },
     { 'tjdevries/gruvbuddy.nvim' },
 
