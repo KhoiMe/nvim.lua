@@ -31,7 +31,7 @@ local Group = require("colorbuddy.group").Group
 local g = require("colorbuddy.group").groups
 local s = require("colorbuddy.style").styles
 
-Group.new("@variable", c.superwhite, nil)
+Group.new("@variable", c.superwhite, nil, s.none)
 
 Group.new("GoTestSuccess", c.green, nil, s.bold)
 Group.new("GoTestFail", c.red, nil, s.bold)
@@ -89,7 +89,7 @@ Group.new("@rapper_return", c.orange:light(), nil, s.italic)
 Group.new("@constructor.ocaml", c.orange:light(), nil, s.none)
 Group.new("constant", c.orange, nil, s.bold)
 
-Group.new("@keyword", c.violet, nil, s.none)
+Group.new("@keyword", c.violet, nil, s.bold)
 Group.new("@keyword.faded", g.nontext.fg:light(), nil, s.none)
 -- Group.new("@keyword.faded", c.green)
 
