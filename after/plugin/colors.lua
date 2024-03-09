@@ -35,6 +35,7 @@ Group.new("@variable", c.superwhite, nil, s.none)
 
 Group.new("GoTestSuccess", c.green, nil, s.bold)
 Group.new("GoTestFail", c.red, nil, s.bold)
+Group.new("Comment", c.gray3:dark(), nil, s.italic)
 
 -- Group.new('Keyword', c.purple, nil, nil)
 
