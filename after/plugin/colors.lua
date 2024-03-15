@@ -4,6 +4,8 @@ local NONE = NONE
 
 function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, 'CursorLine', { bold = true })
+    vim.api.nvim_set_hl(0, 'CursorLine', { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
     vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
     vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#21202e" })
@@ -13,6 +15,7 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "Pmenu", { bg = "#212121" })
     vim.api.nvim_set_hl(0, "SignColumn", { bg = NONE })
     vim.cmd("highlight LineNr gui=italic")
+    vim.cmd("highlight CursorLine gui=bold")
     vim.cmd("highlight WinBar guibg=NONE")
     vim.cmd("highlight WinBarNC guibg=NONE")
 end

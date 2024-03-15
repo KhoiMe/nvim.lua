@@ -1,50 +1,56 @@
-local vim = vim
+local opt = vim.opt
+local g = vim.g
 
-vim.opt.guicursor = ""
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+opt.guicursor = ""
+opt.splitright = true
+opt.splitbelow = true
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+opt.nu = true
+opt.relativenumber = true
 
-vim.opt.smartindent = true
-vim.opt.autoindent = true
+opt.smartindent = true
+opt.autoindent = true
 
-vim.opt.cmdheight = 1
-vim.opt.showmode = false
+opt.cmdheight = 1
+opt.showmode = false
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
 
-vim.opt.wrap = true
-vim.opt.linebreak = true
-vim.opt.smartcase = true
-vim.opt.spell = false
+opt.wrap = true
+opt.wrapscan = false
+opt.whichwrap = "bs"
+opt.linebreak = true
+opt.smartcase = true
+opt.spell = false
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+opt.hlsearch = false
+opt.incsearch = true
 
-vim.opt.termguicolors = true
+opt.termguicolors = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+opt.scrolloff = 8
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
 
-vim.opt.updatetime = 750
-vim.opt.pumheight = 10
+opt.updatetime = 750
+opt.pumheight = 10
 
 -- netrw things
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
+g.netrw_browse_split = 0
+g.netrw_banner = 0
+g.netrw_winsize = 25
 
 vim.cmd [[let g:dbext_default_mysql_cmd = 'mariadb']]
+vim.cmd [[set cursorline]]
 vim.cmd [[hi Pmenu guibg=#212121]]
+vim.cmd([[autocmd FileType * set fo-=r fo-=c fo-=o]]) -- dont continue comments on enter, etc. see :h fo-table
+
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
