@@ -44,6 +44,14 @@ vim.opt.pumheight = 10
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+vim.cmd ([[
+    augroup latexSpell
+        autocmd!
+        autocmd FileType latex setlocal spell spelllang=es
+        autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=es
+    augroup END
+            
+]], false)
 
 vim.cmd [[let g:dbext_default_mysql_cmd = 'mariadb']]
 vim.cmd [[hi Pmenu guibg=#212121]]
