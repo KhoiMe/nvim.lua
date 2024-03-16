@@ -81,14 +81,6 @@ require("lazy").setup({
 
     -- {'windwp/nvim-autopairs'},
     { 'windwp/nvim-ts-autotag' },
-    {
-        "shellRaining/hlchunk.nvim",
-        event = { "UIEnter" },
-        config = function()
-            -- require("hlchunk").setup({})
-        end
-    },
-
 
     { 'nvim-tree/nvim-web-devicons' },
 
