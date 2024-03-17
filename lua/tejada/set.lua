@@ -4,8 +4,8 @@ vim.opt.guicursor = ""
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.opt.nu = false
+vim.opt.relativenumber = false
 
 vim.opt.smartindent = true
 vim.opt.autoindent = true
@@ -44,15 +44,16 @@ vim.opt.pumheight = 10
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
-vim.cmd ([[
+vim.cmd([[
     augroup latexSpell
         autocmd!
         autocmd FileType latex setlocal spell spelllang=es
         autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=es
     augroup END
-            
+
 ]], false)
 
 vim.cmd [[let g:dbext_default_mysql_cmd = 'mariadb']]
+vim.cmd [[set cursorline]]
 vim.cmd [[hi Pmenu guibg=#212121]]
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"

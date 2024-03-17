@@ -26,6 +26,8 @@ require("lazy").setup({
 
     { 'rose-pine/neovim',        name = 'rose-pine' },
     { 'rebelot/kanagawa.nvim' },
+    { 'sainnhe/gruvbox-material' },
+    { 'elvessousa/sobrio' },
     { 'tjdevries/colorbuddy.vim' },
     { 'tjdevries/gruvbuddy.nvim' },
 
