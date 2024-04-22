@@ -8,7 +8,7 @@ require('rose-pine').setup{
 
 function ColorMyPencils(color)
     color = color or "rose-pine"
-    vim.cmd("colorscheme gruvbox-material")
+    vim.cmd("colorscheme sobrio")
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
