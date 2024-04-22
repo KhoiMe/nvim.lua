@@ -99,7 +99,16 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
         border = "single"
     }
 )
-vim.diagnostic.config({ float = { border = "single" } })
+vim.diagnostic.config({
+    float = {
+        focusable = false,
+        style = "minimal",
+        border = "rounded",
+        source = "always",
+        header = "",
+        prefix = "",
+    },
+})
 --- end of colorscheme things
 
 lsp.set_sign_icons({

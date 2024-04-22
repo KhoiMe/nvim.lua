@@ -31,7 +31,14 @@ require("lazy").setup({
     { 'tjdevries/colorbuddy.vim' },
     { 'tjdevries/gruvbuddy.nvim' },
 
-
+    -- notifications
+    {
+        'j-hui/fidget.nvim',
+        tag = 'v1.0.0',
+        opts = {
+            -- options
+        },
+    },
 
     {
         'nvim-treesitter/nvim-treesitter',
@@ -96,7 +103,12 @@ require("lazy").setup({
 
     {
         { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
-        { 'neovim/nvim-lspconfig' },
+        {
+            'neovim/nvim-lspconfig',
+            dependencies = {
+                'j-hui/fidget.nvim',
+            }
+        },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'hrsh7th/nvim-cmp' },
         { 'L3MON4D3/LuaSnip' }, {
