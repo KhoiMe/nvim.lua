@@ -156,6 +156,8 @@ require('lspconfig').emmet_ls.setup({
     filetypes = { "html", "php" },
 })
 
+require('lspconfig').dartls.setup({})
+
 require('lspconfig').html.setup({
     single_file_support = false,
     filetypes = { "html", "php" },
