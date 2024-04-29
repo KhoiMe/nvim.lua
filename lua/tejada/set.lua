@@ -54,6 +54,6 @@ vim.cmd([[
 ]], false)
 
 vim.cmd [[let g:dbext_default_mysql_cmd = 'mariadb']]
-vim.cmd [[set cursorline]]
+-- vim.cmd [[set cursorline]]
 vim.cmd [[hi Pmenu guibg=#212121]]
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"

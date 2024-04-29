@@ -2,13 +2,13 @@
 local vim = vim
 local NONE = NONE
 
-require('rose-pine').setup{
+require('rose-pine').setup {
     disable_background = true
 }
 
 function ColorMyPencils(color)
     color = color or "rose-pine"
-    vim.cmd("colorscheme sobrio")
+    vim.cmd("colorscheme gruvbuddy")
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -25,6 +25,8 @@ function ColorMyPencils(color)
     vim.cmd("highlight CursorLine guibg=NONE")
     vim.cmd("highlight WinBar guibg=NONE")
     vim.cmd("highlight WinBarNC guibg=NONE")
+    vim.cmd("highlight Visual gui=bold")
+    vim.cmd("highlight Visual guibg=#212121")
 end
 
 if not pcall(require, "colorbuddy") then
@@ -106,18 +108,17 @@ Group.new("@keyword.faded", g.nontext.fg:light(), nil, s.none)
 Group.new("Function", c.yellow, nil, s.none)
 
 vim.cmd [[
+  hi link @punctuation.bracket.rapper @text.literal
+
   hi link @function.call.lua LuaFunctionCall
   hi link @lsp.type.variable.lua variable
   hi link @lsp.type.variable.ocaml variable
   hi link @lsp.type.variable.rust variable
   hi link @lsp.type.namespace @namespace
-  hi link @punctuation.bracket.rapper @text.literal
   hi link @normal Normal
 ]]
 
 -- Group.new("Normal", c.superwhite, c.gray0)
-
-local colors = require("colorbuddy.color").colors
 
 local ns_tj = vim.api.nvim_create_namespace "tj_colors"
 
