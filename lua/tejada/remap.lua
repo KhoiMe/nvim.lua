@@ -44,7 +44,7 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/myScripts/tmux-sessions<C
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>")
+vim.keymap.set("n", "<C-y>", ":ToggleTerm<CR>")
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
