@@ -8,7 +8,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.extend_cmp()
-require('mason').setup({})
+require('mason').setup()
 require('mason-lspconfig').setup({
     -- Replace the language servers listed here
     -- with the ones you want to install
@@ -157,7 +157,6 @@ require('lspconfig').emmet_ls.setup({
 })
 
 require('lspconfig').dartls.setup({})
-
 require('lspconfig').html.setup({
     single_file_support = false,
     filetypes = { "html", "php" },
