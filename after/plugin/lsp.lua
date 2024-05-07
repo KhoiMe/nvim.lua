@@ -150,7 +150,6 @@ end
 local servers_to_setup = { 'pylsp', 'rust_analyzer', 'cssls', 'tsserver', 'lua_ls', 'html' }
 setup_language_servers(servers_to_setup)
 
-require('lspconfig').dartls.setup({})
 
 -- Php needed
 require('lspconfig').emmet_ls.setup({
