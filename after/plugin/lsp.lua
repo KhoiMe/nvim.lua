@@ -26,11 +26,12 @@ local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 local winhighlight = { winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel", }
 
+require('nvim-ts-autotag').setup()
 
 cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
-        { name = 'treesitter' },
+        -- { name = 'treesitter' },
         -- { name = 'cmdline' },
         { name = 'luasnip' },
         { name = 'path' },
