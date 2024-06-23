@@ -24,7 +24,7 @@ require("lazy").setup({
         'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
     },
 
-    { 'rose-pine/neovim',        name = 'rose-pine' },
+    { 'rose-pine/neovim',             name = 'rose-pine' },
     { 'rebelot/kanagawa.nvim' },
     { 'sainnhe/gruvbox-material' },
     { 'elvessousa/sobrio' },
@@ -142,7 +142,6 @@ require("lazy").setup({
         { 'hrsh7th/cmp-nvim-lua' },
         { 'hrsh7th/cmp-nvim-lsp' }, -- Required
         -- { 'hrsh7th/cmp-cmdline' },
-
 
         -- snippets
         { 'rafamadriz/friendly-snippets' },
