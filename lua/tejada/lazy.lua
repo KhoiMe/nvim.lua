@@ -24,7 +24,7 @@ require("lazy").setup({
         'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
     },
 
-    { 'rose-pine/neovim',             name = 'rose-pine' },
+    { 'rose-pine/neovim',        name = 'rose-pine' },
     { 'rebelot/kanagawa.nvim' },
     { 'sainnhe/gruvbox-material' },
     { 'elvessousa/sobrio' },
@@ -62,7 +62,12 @@ require("lazy").setup({
     { 'mbbill/undotree' },
     { 'tpope/vim-fugitive' },
 
-    { 'akinsho/toggleterm.nvim' },
+    {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        config = true
+    },
+
     { 'ryanoasis/vim-devicons' },
 
     -- mobile stuff
