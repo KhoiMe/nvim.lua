@@ -2,9 +2,9 @@
 local vim = vim
 local NONE = NONE
 
-require('rose-pine').setup {
-    disable_background = true
-}
+-- require('rose-pine').setup {
+--     disable_background = true
+-- }
 
 function ColorMyPencils(color)
     color = color or "rose-pine"

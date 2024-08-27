@@ -24,10 +24,6 @@ require("lazy").setup({
         'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
     },
 
-    { 'rose-pine/neovim',        name = 'rose-pine' },
-    { 'rebelot/kanagawa.nvim' },
-    { 'sainnhe/gruvbox-material' },
-    { 'elvessousa/sobrio' },
     { 'tjdevries/colorbuddy.vim' },
     { 'tjdevries/gruvbuddy.nvim' },
 
@@ -54,12 +50,15 @@ require("lazy").setup({
     },
 
     { 'nvim-treesitter/nvim-treesitter-context' },
+
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         dependencies = { "nvim-lua/plenary.nvim" },
     },
+
     { 'mbbill/undotree' },
+
     { 'tpope/vim-fugitive' },
 
     {
@@ -67,6 +66,8 @@ require("lazy").setup({
         version = "*",
         config = true
     },
+
+    { 'dstein64/vim-startuptime' },
 
     { 'ryanoasis/vim-devicons' },
 
@@ -87,23 +88,23 @@ require("lazy").setup({
     },
 
     -- latex stuff
-    {
-        "lervag/vimtex",
-        dependencies = {
-            "micangl/cmp-vimtex",
-        },
-        version = "*",
-    },
+    -- {
+    --     "lervag/vimtex",
+    --     dependencies = {
+    --         "micangl/cmp-vimtex",
+    --     },
+    --     version = "*",
+    -- },
 
 
-    {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        ft = { "markdown" },
-        build = function() vim.fn["mkdp#util#install"]() end,
-    },
+    -- {
+    --     "iamcco/markdown-preview.nvim",
+    --     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    --     ft = { "markdown" },
+    --     build = function() vim.fn["mkdp#util#install"]() end,
+    -- },
 
-    { 'shortcuts/no-neck-pain.nvim' },
+    -- { 'shortcuts/no-neck-pain.nvim' },
 
     -- weird utils
     { 'norcalli/nvim-colorizer.lua' },
