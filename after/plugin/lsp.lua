@@ -145,7 +145,7 @@ local function setup_language_servers(server_names_nav)
     end
 end
 
-local servers_to_setup = { 'pylsp', 'rust_analyzer', 'cssls', 'tsserver', 'lua_ls', 'html' }
+local servers_to_setup = { 'pylsp', 'rust_analyzer', 'cssls', 'lua_ls', 'html' }
 setup_language_servers(servers_to_setup)
 
 
