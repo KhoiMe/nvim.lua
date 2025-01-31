@@ -1,5 +1,4 @@
 local lsp = require('lsp-zero')
-local vim = vim
 local navic = require("nvim-navic")
 
 lsp.on_attach(function(client, bufnr)

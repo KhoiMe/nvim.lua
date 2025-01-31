@@ -1,5 +1,4 @@
 -- require('colorbuddy').colorscheme('gruvbuddy')
-local vim = vim
 local NONE = NONE
 
 -- require('rose-pine').setup {
