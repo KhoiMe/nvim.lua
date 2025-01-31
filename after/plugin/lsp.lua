@@ -34,6 +34,7 @@ cmp.setup({
         -- { name = 'treesitter' },
         -- { name = 'cmdline' },
         { name = 'luasnip' },
+        { name = 'lazydev' },
         { name = 'path' },
         { name = 'buffer' },
         { name = 'nvim_lsp_signature_help' },
