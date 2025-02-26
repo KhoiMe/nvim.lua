@@ -31,7 +31,7 @@ cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
         -- { name = 'treesitter' },
-        -- { name = 'cmdline' },
+        -- { name = 'spell' },
         { name = 'luasnip' },
         { name = 'lazydev' },
         { name = 'path' },
@@ -162,6 +162,14 @@ require('lspconfig').html.setup({
         navic.attach(client, bufnr)
     end,
 })
+
+require'lspconfig'.texlab.setup{
+  settings = {
+    ltex = {
+      language = "es",
+    }
+  }
+}
 
 
 lsp.setup()

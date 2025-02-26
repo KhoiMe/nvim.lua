@@ -21,6 +21,15 @@ vim.opt.linebreak = true
 vim.opt.smartcase = true
 vim.opt.spell = false
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text", "tex" },
+  callback = function()
+    vim.opt_local.spell = true
+    vim.opt_local.spelllang = "es"
+  end,
+})
+
+
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
@@ -52,6 +61,7 @@ vim.cmd([[
 ]], false)
 
 vim.cmd [[let g:dbext_default_mysql_cmd = 'mariadb']]
+vim.cmd [[ let g:spellfile_URL = 'https://ftp.nluug.nl/vim/runtime/spell']]
 -- vim.cmd [[set cursorline]]
 vim.cmd [[hi Pmenu guibg=#212121]]
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"

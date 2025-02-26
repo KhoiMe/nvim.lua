@@ -41,6 +41,8 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 --- nah, why I didn't notice:
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/myScripts/tmux-sessions<CR>")
 
+vim.keymap.set("n", "<leader>l", "<cmd>silent !xelatex main.tex<CR>")
+
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<C-y>", ":ToggleTerm<CR>")

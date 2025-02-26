@@ -18,11 +18,11 @@ require("lazy").setup({
         dependencies = 'nvim-lua/plenary.nvim'
     },
 
-    {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        build =
-        'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-    },
+    -- {
+    --     'nvim-telescope/telescope-fzf-native.nvim',
+    --     build =
+    --     'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+    -- },
 
     { 'tjdevries/colorbuddy.vim' },
     { 'tjdevries/gruvbuddy.nvim' },
@@ -88,6 +88,7 @@ require("lazy").setup({
     },
 
     -- latex stuff
+    -- DEPRECATED
     -- {
     --     "lervag/vimtex",
     --     dependencies = {
@@ -96,6 +97,18 @@ require("lazy").setup({
     --     version = "*",
     -- },
 
+    {
+        "lervag/vimtex",
+        lazy = false, -- we don't want to lazy load VimTeX
+        dependencies = {
+            "micangl/cmp-vimtex",
+        },
+        -- tag = "v2.15", -- uncomment to pin to a specific release
+        init = function()
+            -- VimTeX configuration goes here, e.g.
+            vim.g.vimtex_view_method = "zathura"
+        end
+    },
 
     -- {
     --     "iamcco/markdown-preview.nvim",
@@ -104,7 +117,7 @@ require("lazy").setup({
     --     build = function() vim.fn["mkdp#util#install"]() end,
     -- },
 
-    -- { 'shortcuts/no-neck-pain.nvim' },
+    { 'shortcuts/no-neck-pain.nvim' },
 
     -- weird utils
     { 'norcalli/nvim-colorizer.lua' },
@@ -157,6 +170,8 @@ require("lazy").setup({
         { 'hrsh7th/cmp-nvim-lsp-signature-help' },
         { 'saadparwaiz1/cmp_luasnip' },
         { 'hrsh7th/cmp-nvim-lua' },
+        -- { 'f3fora/cmp-spell' },
+
         -- { 'hrsh7th/cmp-cmdline' },
 
         -- snippets
