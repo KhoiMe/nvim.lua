@@ -54,6 +54,7 @@ cmp.setup({
     },
     formatting = {
         fields = { 'abbr', 'menu', 'kind' },
+        expandable_indicator = true,
         format =
             function(entry, item)
                 local menu_icon = {
