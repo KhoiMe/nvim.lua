@@ -23,7 +23,9 @@ require('lsp-zero').extend_cmp()
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
-local winhighlight = { winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel", }
+local winhighlight = {
+    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel"
+}
 
 require('nvim-ts-autotag').setup()
 
@@ -131,7 +133,6 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<SPACE>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("n", "<C-m>", '<cmd>Telescope lsp_references<cr>', { buffer = bufnr })
 
-    -- can't autoformat  because php inline
     -- lsp.buffer_autoformat()
 end)
 
@@ -164,12 +165,12 @@ require('lspconfig').html.setup({
     end,
 })
 
-require'lspconfig'.texlab.setup{
-  settings = {
-    ltex = {
-      language = "es",
+require 'lspconfig'.texlab.setup {
+    settings = {
+        ltex = {
+            language = "es",
+        }
     }
-  }
 }
 
 
