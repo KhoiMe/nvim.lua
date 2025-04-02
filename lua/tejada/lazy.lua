@@ -111,7 +111,7 @@ require("lazy").setup({
     --     build = function() vim.fn["mkdp#util#install"]() end,
     -- },
 
-    { 'shortcuts/no-neck-pain.nvim' },
+    -- { 'shortcuts/no-neck-pain.nvim' },
 
     -- weird utils
     { 'norcalli/nvim-colorizer.lua' },
