@@ -1,3 +1,4 @@
+vim.opt.colorcolumn = "80" -- because you need to wrap around this thing
 vim.opt.guicursor = ""
 vim.opt.splitright = true
 vim.opt.splitbelow = true
@@ -51,6 +52,8 @@ vim.opt.pumheight = 10
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+-- get latex spell for spanish
 vim.cmd([[
     augroup latexSpell
         autocmd!
@@ -65,3 +68,29 @@ vim.cmd [[ let g:spellfile_URL = 'https://ftp.nluug.nl/vim/runtime/spell']]
 -- vim.cmd [[set cursorline]]
 vim.cmd [[hi Pmenu guibg=#212121]]
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+
+-- highlight when yanking
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+local yank_group = augroup('HighlightYank', {})
+
+function R(name)
+    require("plenary.reload").reload_module(name)
+end
+
+vim.filetype.add({
+    extension = {
+        templ = 'templ',
+    }
+})
+
+autocmd('TextYankPost', {
+    group = yank_group,
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = 'IncSearch',
+            timeout = 40,
+        })
+    end,
+})
