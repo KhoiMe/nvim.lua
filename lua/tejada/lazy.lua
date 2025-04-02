@@ -123,8 +123,6 @@ require("lazy").setup({
     { 'nvim-tree/nvim-web-devicons' },
 
     { 'lewis6991/gitsigns.nvim' },
-    { 'dinhhuy258/git.nvim' },
-
     {
         "SmiteshP/nvim-navic",
         dependencies = "neovim/nvim-lspconfig"
