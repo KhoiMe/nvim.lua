@@ -38,7 +38,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 --- nah, why I didn't notice:
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/myScripts/tmux-sessions<CR>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/scripts/myScripts/tmux-sessions<CR>")
 
 vim.keymap.set("n", "<leader>l", "<cmd>silent !xelatex main.tex<CR>")
 
