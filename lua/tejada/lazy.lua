@@ -21,6 +21,8 @@ require("lazy").setup({
     { 'tjdevries/colorbuddy.vim' },
     { 'tjdevries/gruvbuddy.nvim' },
 
+    { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
+
     -- notifications
     {
         'j-hui/fidget.nvim',
@@ -151,7 +153,7 @@ require("lazy").setup({
     },
 
     {
-        { 'VonHeikemen/lsp-zero.nvim'},
+        { 'VonHeikemen/lsp-zero.nvim' },
         {
             'neovim/nvim-lspconfig',
             dependencies = {

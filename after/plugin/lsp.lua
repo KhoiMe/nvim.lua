@@ -91,7 +91,7 @@ cmp.setup({
 -- })
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-    vim.lsp.handlers.hover, {
+    vim.lsp.hover, {
         border = "single"
     }
 )
@@ -123,7 +123,7 @@ lsp.set_sign_icons({
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover { border= "single", max_height = 25, max_width = 120 } end, opts)
     vim.keymap.set("n", "<SPACE>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
     vim.keymap.set("n", "<SPACE>vd", function() vim.diagnostic.open_float() end, opts)
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
@@ -152,14 +152,14 @@ setup_language_servers(servers_to_setup)
 
 
 -- Php needed
-require('lspconfig').emmet_ls.setup({
-    single_file_support = false,
-    filetypes = { "html", "php" },
-})
+-- require('lspconfig').emmet_ls.setup({
+--     single_file_support = false,
+--     filetypes = { "html", "php" },
+-- })
 
 require('lspconfig').html.setup({
     single_file_support = false,
-    filetypes = { "html", "php" },
+    filetypes = { "html"},
     on_attach = function(client, bufnr)
         navic.attach(client, bufnr)
     end,
