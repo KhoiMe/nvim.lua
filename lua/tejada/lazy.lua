@@ -20,8 +20,8 @@ require("lazy").setup({
 
     { 'tjdevries/colorbuddy.vim' },
     { 'tjdevries/gruvbuddy.nvim' },
-
-    { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
+    -- { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
+    -- { "ellisonleao/gruvbox.nvim", priority = 1000,     config = true,  opts = ... },
 
     -- notifications
     {
