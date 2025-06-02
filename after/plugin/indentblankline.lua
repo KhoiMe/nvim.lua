@@ -1,6 +1,10 @@
--- require("ibl").setup
--- {
+-- local highlight = {
+--     "ColorColumn",
+--     "NonText",
+--     "Whitespace",
+-- }
+
+-- require("ibl").setup {
 --     debounce = 100,
---     whitespace = { highlight = { "Whitespace", "NonText" } },
---     scope = { exclude = { language = { "lua" } } },
+--     indent = { highlight = highlight, char = "-", tab_char = "-" },
 -- }

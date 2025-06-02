@@ -18,8 +18,9 @@ require("lazy").setup({
         dependencies = 'nvim-lua/plenary.nvim'
     },
 
-    { 'tjdevries/colorbuddy.vim' },
-    { 'tjdevries/gruvbuddy.nvim' },
+    { "blazkowolf/gruber-darker.nvim" },
+    -- { 'tjdevries/colorbuddy.vim' },
+    -- { 'tjdevries/gruvbuddy.nvim' },
     -- { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
     -- { "ellisonleao/gruvbox.nvim", priority = 1000,     config = true,  opts = ... },
 

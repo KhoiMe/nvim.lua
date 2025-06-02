@@ -9,7 +9,7 @@ vim.opt.relativenumber = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 0
 vim.opt.showmode = false
 
 vim.opt.tabstop = 4
@@ -67,7 +67,9 @@ vim.cmd [[let g:dbext_default_mysql_cmd = 'mariadb']]
 vim.cmd [[ let g:spellfile_URL = 'https://ftp.nluug.nl/vim/runtime/spell']]
 -- vim.cmd [[set cursorline]]
 vim.cmd [[hi Pmenu guibg=#212121]]
-vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+
+-- turn on navic or not 
+-- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 -- highlight when yanking
 local augroup = vim.api.nvim_create_augroup
@@ -94,3 +96,8 @@ autocmd('TextYankPost', {
         })
     end,
 })
+
+vim.cmd [[
+set listchars+=space:·
+set list
+]]
