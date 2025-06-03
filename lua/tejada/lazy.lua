@@ -117,7 +117,10 @@ require("lazy").setup({
     -- { 'shortcuts/no-neck-pain.nvim' },
 
     -- weird utils
-    { 'norcalli/nvim-colorizer.lua' },
+    {
+        "catgoose/nvim-colorizer.lua",
+        event = "BufReadPre",
+    },
     { 'tpope/vim-commentary' },
 
     -- {'windwp/nvim-autopairs'},
