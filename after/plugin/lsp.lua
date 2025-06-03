@@ -32,7 +32,7 @@ require('nvim-ts-autotag').setup()
 cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
-        -- { name = 'treesitter' },
+        { name = 'treesitter' },
         -- { name = 'spell' },
         { name = 'luasnip' },
         { name = 'lazydev' },
