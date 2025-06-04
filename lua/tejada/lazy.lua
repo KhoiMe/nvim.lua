@@ -147,6 +147,10 @@ require("lazy").setup({
     },
 
     {
+        'mfussenegger/nvim-jdtls'
+    },
+
+    {
         "tjdevries/php.nvim",
         dependencies = {
             "nvim-treesitter/nvim-treesitter"
