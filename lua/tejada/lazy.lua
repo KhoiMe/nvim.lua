@@ -146,9 +146,9 @@ require("lazy").setup({
         },
     },
 
-    {
-        'mfussenegger/nvim-jdtls'
-    },
+    -- {
+    --     'mfussenegger/nvim-jdtls'
+    -- },
 
     {
         "tjdevries/php.nvim",
