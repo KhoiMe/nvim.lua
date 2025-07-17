@@ -23,6 +23,7 @@ require("lazy").setup({
     -- { 'tjdevries/gruvbuddy.nvim' },
     -- { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
     -- { "ellisonleao/gruvbox.nvim", priority = 1000,     config = true,  opts = ... },
+    -- { "rebelot/kanagawa.nvim" },
 
     -- notifications
     {
@@ -190,5 +191,14 @@ require("lazy").setup({
         -- snippets
         { 'rafamadriz/friendly-snippets' },
         { 'honza/vim-snippets' },
+
+        -- TODO stuff
+
+        {
+            "nvim-neorg/neorg",
+            lazy = false,
+            version = "*",
+            config = true,
+        }
 
     } })
