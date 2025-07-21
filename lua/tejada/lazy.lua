@@ -33,6 +33,12 @@ require("lazy").setup({
     },
 
     {
+        'MeanderingProgrammer/render-markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+        opts = {},
+    },
+
+    {
         'nvim-treesitter/nvim-treesitter',
         build = function()
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
@@ -95,18 +101,20 @@ require("lazy").setup({
     --     version = "*",
     -- },
 
-    {
-        "lervag/vimtex",
-        lazy = false, -- we don't want to lazy load VimTeX
-        dependencies = {
-            "micangl/cmp-vimtex",
-        },
-        tag = "v2.15", -- uncomment to pin to a specific release
-        init = function()
-            -- VimTeX configuration goes here, e.g.
-            vim.g.vimtex_view_method = "zathura"
-        end
-    },
+
+    -- LATEX Thing
+    -- {
+    --     "lervag/vimtex",
+    --     lazy = false, -- we don't want to lazy load VimTeX
+    --     dependencies = {
+    --         "micangl/cmp-vimtex",
+    --     },
+    --     tag = "v2.15", -- uncomment to pin to a specific release
+    --     init = function()
+    --         -- VimTeX configuration goes here, e.g.
+    --         vim.g.vimtex_view_method = "zathura"
+    --     end
+    -- },
 
     -- {
     --     "iamcco/markdown-preview.nvim",
@@ -147,6 +155,7 @@ require("lazy").setup({
         },
     },
 
+    -- JAVA SUPPORT
     -- {
     --     'mfussenegger/nvim-jdtls'
     -- },
@@ -193,12 +202,5 @@ require("lazy").setup({
         { 'honza/vim-snippets' },
 
         -- TODO stuff
-
-        {
-            "nvim-neorg/neorg",
-            lazy = false,
-            version = "*",
-            config = true,
-        }
 
     } })

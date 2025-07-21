@@ -23,11 +23,16 @@ vim.opt.smartcase = true
 vim.opt.spell = false
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "markdown", "text", "tex" },
-  callback = function()
-    vim.opt_local.spell = true
-    vim.opt_local.spelllang = "es"
-  end,
+    pattern = { "markdown", "text", "tex" },
+    callback = function()
+        -- set true for spellcheck
+        vim.opt_local.spell = true
+        -- if I need spanish spell check
+        -- vim.opt_local.spelllang = "es"
+
+        -- Or english
+        vim.opt_local.spelllang = "en"
+    end,
 })
 
 
@@ -68,7 +73,7 @@ vim.cmd [[ let g:spellfile_URL = 'https://ftp.nluug.nl/vim/runtime/spell']]
 -- vim.cmd [[set cursorline]]
 vim.cmd [[hi Pmenu guibg=#212121]]
 
--- turn on navic or not 
+-- turn on navic or not
 -- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 -- highlight when yanking
