@@ -147,7 +147,7 @@ local function setup_language_servers(server_names_nav)
     end
 end
 
-local servers_to_setup = { 'pylsp', 'rust_analyzer', 'cssls', 'lua_ls', 'html' }
+local servers_to_setup = {'ts_ls','jsonls','intelephense', 'pylsp', 'rust_analyzer', 'cssls', 'lua_ls', 'html' }
 setup_language_servers(servers_to_setup)
 
 
@@ -173,5 +173,12 @@ require 'lspconfig'.texlab.setup {
     }
 }
 
+
+-- require 'lspconfig'.intelephense.setup {
+--     filetypes = { "php", "blade", "php_only"},
+--     files = {
+--         associations = {"*.php", "*.blade.php"},
+--     }
+-- }
 
 lsp.setup()

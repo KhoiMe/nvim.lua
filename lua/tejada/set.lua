@@ -74,7 +74,7 @@ vim.cmd [[ let g:spellfile_URL = 'https://ftp.nluug.nl/vim/runtime/spell']]
 vim.cmd [[hi Pmenu guibg=#212121]]
 
 -- turn on navic or not
--- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 -- highlight when yanking
 local augroup = vim.api.nvim_create_augroup
@@ -105,4 +105,6 @@ autocmd('TextYankPost', {
 vim.cmd [[
 set listchars+=space:·
 set list
+
+highlight WinBar guibg=#181818
 ]]
