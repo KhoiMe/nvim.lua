@@ -65,6 +65,8 @@ require("lazy").setup({
 
     { 'tpope/vim-fugitive' },
 
+    { 'APZelos/blamer.nvim' },
+
     {
         'akinsho/toggleterm.nvim',
         version = "*",
