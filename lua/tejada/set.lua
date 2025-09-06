@@ -111,3 +111,4 @@ set list
 
 highlight WinBar guibg=#181818
 ]]
+
