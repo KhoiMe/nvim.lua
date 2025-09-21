@@ -123,7 +123,8 @@ lsp.set_sign_icons({
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-    vim.keymap.set("n", "K", function() vim.lsp.buf.hover { border= "single", max_height = 25, max_width = 120 } end, opts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover { border = "single", max_height = 25, max_width = 120 } end,
+        opts)
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
     vim.keymap.set("n", "<SPACE>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -147,7 +148,7 @@ local function setup_language_servers(server_names_nav)
     end
 end
 
-local servers_to_setup = {'ts_ls','jsonls','intelephense', 'pylsp', 'rust_analyzer', 'cssls', 'lua_ls', 'html' }
+local servers_to_setup = { 'ts_ls', 'jsonls', 'intelephense', 'pylsp', 'rust_analyzer', 'cssls', 'lua_ls', 'html' }
 setup_language_servers(servers_to_setup)
 
 
@@ -159,7 +160,7 @@ setup_language_servers(servers_to_setup)
 
 require('lspconfig').html.setup({
     single_file_support = false,
-    filetypes = { "html"},
+    filetypes = { "html" },
     on_attach = function(client, bufnr)
         navic.attach(client, bufnr)
     end,
@@ -172,6 +173,19 @@ require 'lspconfig'.texlab.setup {
         }
     }
 }
+
+require 'lspconfig'.gopls.setup({
+    cmd = { "gopls" },
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+                shadow = true,
+            },
+            staticcheck = true,
+        },
+    },
+})
 
 
 -- require 'lspconfig'.intelephense.setup {
