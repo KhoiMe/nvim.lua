@@ -174,19 +174,21 @@ require 'lspconfig'.texlab.setup {
     }
 }
 
-require 'lspconfig'.gopls.setup({
-    cmd = { "gopls" },
-    settings = {
-        gopls = {
-            analyses = {
-                unusedparams = true,
-                shadow = true,
-            },
-            staticcheck = true,
-        },
+
+vim.lsp.config("gopls", {
+  cmd = { "gopls" },
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+      },
+      staticcheck = true,
     },
+  },
 })
 
+vim.lsp.enable("gopls")
 
 -- require 'lspconfig'.intelephense.setup {
 --     filetypes = { "php", "blade", "php_only"},
