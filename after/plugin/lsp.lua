@@ -159,13 +159,13 @@ setup_language_servers(servers_to_setup)
 -- })
 
 
-require 'lspconfig'.texlab.setup {
+vim.lsp.config("texlab",{
     settings = {
         ltex = {
             language = "es",
         }
     }
-}
+})
 
 vim.lsp.config("gopls", {
   cmd = { "gopls" },
@@ -180,7 +180,7 @@ vim.lsp.config("gopls", {
   },
 })
 
-vim.lsp.enable("gopls")
+vim.lsp.enable({"gopls", "texlab"})
 
 -- require 'lspconfig'.intelephense.setup {
 --     filetypes = { "php", "blade", "php_only"},
