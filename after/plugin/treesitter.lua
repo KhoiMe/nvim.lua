@@ -1,6 +1,6 @@
 ---@diagnostic disable-next-line: missing-fields
 require('nvim-ts-autotag').setup {
-    ensure_installed = { "javascript", "html", "php", "c", "lua", "vim", "vimdoc", "query"},
+    ensure_installed = { "javascript", "html", "php", "c", "lua", "vim", "vimdoc", "query", "latex"},
     sync_install = false,
     auto_install = true,
     highlight = {
@@ -17,7 +17,7 @@ require('nvim-ts-autotag').setup {
 }
 ---@diagnostic disable-next-line: missing-fields
 require 'nvim-treesitter.configs'.setup {
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "blade", "html", "php", "markdown", "markdown_inline" },
+    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "blade", "html", "php", "markdown", "markdown_inline", "latex" },
     sync_install = false,
     auto_install = true,
     ignore_install = { "javascript" },

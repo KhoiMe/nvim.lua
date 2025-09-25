@@ -13,7 +13,7 @@ require('mason-lspconfig').setup({
         lsp.default_setup,
         lua_ls = function()
             -- (Optional) Configure lua language server for neovim
-            require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+            vim.lsp.config.lua_ls.setup(lsp.nvim_lua_ls())
         end,
     },
 })
@@ -140,7 +140,7 @@ end)
 -- nvim navic
 local function setup_language_servers(server_names_nav)
     for _, server_nav in ipairs(server_names_nav) do
-        require('lspconfig')[server_nav].setup({
+        vim.lsp.config(server_nav, {
             on_attach = function(client, bufnr)
                 navic.attach(client, bufnr)
             end,
@@ -153,18 +153,11 @@ setup_language_servers(servers_to_setup)
 
 
 -- Php needed
--- require('lspconfig').emmet_ls.setup({
+-- vim.lsp.config.emmet_ls.setup({
 --     single_file_support = false,
 --     filetypes = { "html", "php" },
 -- })
 
-require('lspconfig').html.setup({
-    single_file_support = false,
-    filetypes = { "html" },
-    on_attach = function(client, bufnr)
-        navic.attach(client, bufnr)
-    end,
-})
 
 require 'lspconfig'.texlab.setup {
     settings = {
@@ -173,7 +166,6 @@ require 'lspconfig'.texlab.setup {
         }
     }
 }
-
 
 vim.lsp.config("gopls", {
   cmd = { "gopls" },
