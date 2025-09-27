@@ -46,14 +46,14 @@ require("lazy").setup({
         end,
     },
 
+    { 'nvim-treesitter/nvim-treesitter-context' },
+
     {
         'stevearc/oil.nvim',
         opts = {},
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
-
-    { 'nvim-treesitter/nvim-treesitter-context' },
 
     {
         "ThePrimeagen/harpoon",
@@ -76,17 +76,6 @@ require("lazy").setup({
     { 'dstein64/vim-startuptime' },
 
     { 'ryanoasis/vim-devicons' },
-
-    -- mobile stuff
-    {
-        'akinsho/flutter-tools.nvim',
-        lazy = false,
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'stevearc/dressing.nvim', -- optional for vim.ui.select
-        },
-        config = true,
-    },
 
     -- big file thing
     {
@@ -132,6 +121,7 @@ require("lazy").setup({
         "catgoose/nvim-colorizer.lua",
         event = "BufReadPre",
     },
+
     { 'tpope/vim-commentary' },
 
     -- {'windwp/nvim-autopairs'},
@@ -140,6 +130,7 @@ require("lazy").setup({
     { 'nvim-tree/nvim-web-devicons' },
 
     { 'lewis6991/gitsigns.nvim' },
+
     {
         "SmiteshP/nvim-navic",
         dependencies = "neovim/nvim-lspconfig"
@@ -150,8 +141,6 @@ require("lazy").setup({
         ft = "lua", -- only load on lua files
         opts = {
             library = {
-                -- See the configuration section for more details
-                -- Load luvit types when the `vim.uv` word is found
                 { path = "${3rd}/luv/library", words = { "vim%.uv" } },
             },
         },
@@ -183,10 +172,11 @@ require("lazy").setup({
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'hrsh7th/nvim-cmp' },
         { 'L3MON4D3/LuaSnip' }, {
+
         -- Optional
         'williamboman/mason.nvim',
     },
-        { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+        { 'williamboman/mason-lspconfig.nvim' },
 
         -- Autocompletion
         { 'ray-x/cmp-treesitter' },
@@ -195,14 +185,9 @@ require("lazy").setup({
         { 'hrsh7th/cmp-nvim-lsp-signature-help' },
         { 'saadparwaiz1/cmp_luasnip' },
         { 'hrsh7th/cmp-nvim-lua' },
-        -- { 'f3fora/cmp-spell' },
-
-        -- { 'hrsh7th/cmp-cmdline' },
 
         -- snippets
         { 'rafamadriz/friendly-snippets' },
         { 'honza/vim-snippets' },
-
-        -- TODO stuff
 
     } })
